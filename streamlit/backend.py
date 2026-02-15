@@ -28,3 +28,8 @@ def plot_sales_over_time(data):
     plt.xticks(rotation=45)
     plt.tight_layout()
     st.pyplot(plt)
+
+
+def selec_productos(data):
+    productos = data['Product line'].unique()
+    return productos

@@ -1,5 +1,5 @@
 import streamlit as st
-from backend import load_data, get_summary, plot_sales_over_time
+from backend import load_data, get_summary, plot_sales_over_time, selec_productos
 
 def main():
     st.title('Supermarket Sales Dashboard')
@@ -27,6 +27,10 @@ def main():
     st.write("### Sales Over Time")
     plt = plot_sales_over_time(filtered_data)
     st.pyplot(plt)
+
+    st.write("### Product Line Distribution")
+    producto_seleccionado = selec_productos(data)
+    st.sidebar.selectbox("Choose a Product Line", producto_seleccionado)
     
 
 
